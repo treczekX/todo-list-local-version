@@ -6,14 +6,14 @@
     <title>Todo list - local version</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="/todo-list-local-version/fontawesome/css/all.css" rel="stylesheet">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 
 </head>
 
 <body>
     <div class="container">
-        <h2>ToDo List - local version</h2>
+        <h2 class="h2Visible">ToDo List</h2>
         <form id="addForm" class="header">
             <input type="text" id="myInput" placeholder="Proszę dodać todo...">
             <button id="addTodo">Add ToDo</button>
@@ -28,8 +28,10 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <input type="text" id="popupInput" placeholder="Proszę edytować todo...">
-                <button id="cancelTodo" class="addBtn">CANCEL</button>
-                <button id="acceptTodo" class="addBtn">OK</button>
+                <div>
+                    <button id="cancelTodo" class="addBtn">CANCEL</button>
+                    <button id="acceptTodo" class="addBtn">OK</button>
+                </div>
                 <span id="closePopup" class="close">&times;</span>
             </div>
         </div>

@@ -1,7 +1,17 @@
+:root {
+    --primaryColor: #DC143C;
+    --primaryColorLight: #E6E6FA;
+    --primaryColorLigthDarker: #DDA0DD;
+    --secondaryColor: #DB7093;
+    --successColor: #00FA9A;
+    --editColor: #00BFFF;
+    --editColorDeep: #0000CD;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
 }
 
 /* Include the padding and border in an element's total width and height */
@@ -12,38 +22,76 @@ body {
 .container {
     width: 100%;
     min-width: 60%;
-    background-color: rgb(236, 230, 218);
-    margin: 50px auto;
-    border: 3px solid black;
+    background-color: var(--primaryColorLight);
+    margin: 0 auto;
+    border: 1px solid var(--primaryColor);
 }
 
-.container h2 {
+.h2Visible {
+    display: block;
+    width: 300px;
+    margin: 30px auto;
     text-align: center;
+    color: var(--primaryColor);
     padding: 20px;
     font-size: 40px;
     letter-spacing: 2px;
+    border: 3px solid var(--secondaryColor)
+}
+
+.h2Visible2 {
+    display: none;
+}
+
+.header {
+    margin: 20px auto;
 }
 
 form {
+    display: flex;
     width: 50%;
+    justify-content: space-around;
+    background-color:none;
+}
+
+.formVisible {
+    display: none;
 }
 
 form input {
     width: 80%;
     font-size: 20px;
     margin-left: 5px;
+    padding-left: 5px;
+    background-color: none;
+    border: none;
+}
+
+form input:focus {
+    border: 2px solid var(--primaryColor)
 }
 
 form button {
-    background-color: white;
     padding: 5px 7px;
     font-size: 20px;
+    color: var(--primaryColor);
+    background-color: var(--primaryColorLight);
+    border: 2px solid var(--primaryColor);
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color:var(--primaryColorLigthDarker);
 }
 
 /* Remove margins and padding from the list */
 ul {
     margin: 0;
-    padding: 0 0 15px 0;
+    padding: 0;
+}
+
+.uldown {
+    margin-top:300px;
 }
 
 li {
@@ -52,11 +100,11 @@ li {
     align-items: center;
     font-size: 24px;
     padding: 5px;
-    background-color: rgb(192, 59, 59);
+    background-color: var(--secondaryColor);
 }
 
 li:hover {
-    outline: 3px solid #fff;
+    outline: 3px solid var(--primaryColorLigthDarker);
     outline-offset: -3px;
 }
 
@@ -71,7 +119,7 @@ li:hover {
 }
 
 .done {
-    background: rgb(8, 233, 83);
+    background: var(--successColor);
     color: white;
 }
 
@@ -88,7 +136,11 @@ li:hover {
     font-size: 20px;
     padding: 5px;
     border-color: 1px solid black;
-    background-color: rgb(207, 207, 180);
+    background-color: var(--primaryColorLight);
+}
+
+.btn-set button:hover {
+    background-color:var(--primaryColorLigthDarker);
 }
 
 /* The Modal (background) */
@@ -121,24 +173,50 @@ li:hover {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--editColor);
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal-content input {
+    height: 40px;
+    width: 600px;
+    font-size: 28px;
+    padding-left: 5px;
+}
+
+.addBtn {
+    height: 40px;
+    width: 100px;
+    background-color: var(--editColorDeep);
+    color: #fff;
+    font-size:16px;
+    border: none;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: var(--editColor);
+    border: 2px solid var(--editColorDeep);
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: var(--editColorDeep);
     float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: var(--primaryColor);
     text-decoration: none;
     cursor: pointer;
 }

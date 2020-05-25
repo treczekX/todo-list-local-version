@@ -11,6 +11,7 @@ let getId = 0;
 let currentTodo;
 let cancelTodoBtn;
 let acceptTodoBtn;
+let headerH2
 
 const initialList = ['Zrób zakupy', 'Nakarm psa'];
 
@@ -32,6 +33,7 @@ function prepareDOMElements() {
     cancelTodoBtn = document.querySelector('#cancelTodo');
     acceptTodoBtn = document.querySelector('#acceptTodo');
     modal = document.querySelector('#myModal');
+    headerH2=document.querySelector('.h2Visible');
 }
 
 function prepareDOMEvents() {
@@ -128,8 +130,15 @@ function removeListElement() {
 function editListElement() {
     // edycja elementów
     openModal();
+    elementsClose();
     text = document.querySelector('li[data-id="' + currentTodo + '"] span').textContent;
     popupInput.value = text;
+}
+
+function elementsClose() {
+    headerH2.classList.add('h2Visible2');
+    list.classList.add('uldown');
+    form.classList.add('formVisible')
 }
 
 function buttonAccept() {
@@ -163,6 +172,9 @@ function openModal() {
 function closeModal() {
     // Zamykanie Modala
     modal.classList.remove('modalVisible');
+    headerH2.classList.remove('h2Visible2');
+    list.classList.remove('uldown');
+    form.classList.remove('formVisible')
 }
 
 // załadowanie strony
